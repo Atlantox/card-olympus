@@ -13,14 +13,10 @@ return new class extends Migration
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('multiverse_id');
-            $table->unsignedBigInteger('article_id');
+            $table->unsignedBigInteger('multiverseid');
             $table->integer('quantity');
-            $table->boolean('active');
-        });
-
-        Schema::table('cards', function (Blueprint $table) {
-            $table->foreign('article_id')->references('id')->on('articles')->onUpdate('cascade')->onDelete('cascade');
+            $table->boolean('active')->default(true);
+            $table->timestamps();
         });
     }
 
