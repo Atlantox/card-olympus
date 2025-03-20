@@ -1,11 +1,10 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::middleware([
     'auth:sanctum',
@@ -13,6 +12,6 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
+        return view('dashboard');
     })->name('dashboard');
 });
