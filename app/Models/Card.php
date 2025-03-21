@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 use App\Models\Article;
-use mtgsdk\Card as MtgCard;
 
 class Card extends Model
 {
@@ -15,10 +14,5 @@ class Card extends Model
     public function article():HasOne
     {
         return $this->hasOne(Article::class, 'articlegable');
-    }
-
-    public function mtg():MtgCard
-    {
-        return new MtgCard($this->multiverseid);
     }
 }

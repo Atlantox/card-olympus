@@ -14,7 +14,12 @@ return new class extends Migration
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('multiverseid');
+            $table->string('name', 255);
+            $table->string('text')->nullable();
+            $table->text('image_url');
+            $table->string('flavor')->nullable();
             $table->integer('quantity');
+            $table->string('set');
             $table->boolean('active')->default(true);
             $table->timestamps();
         });

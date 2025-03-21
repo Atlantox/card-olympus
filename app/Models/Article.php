@@ -15,9 +15,4 @@ class Article extends Model
     {
         return $this->morphTo();
     }
-
-    public function getTypeAttribute():string
-    {
-        return class_basename($this->articlegable_type) ?? 'Unknown';
-    }
 }

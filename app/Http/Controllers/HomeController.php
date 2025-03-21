@@ -5,15 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-use Inertia\Response;
-use Inertia\Inertia;
-
 use App\Models\Article;
-
-use mtgsdk\Card as MtgCard;
 class HomeController extends Controller
 {
-    public function index():Response
+    public function index():View
     {
         /*
         $best_selling = [];
@@ -22,11 +17,6 @@ class HomeController extends Controller
         */
 
         $articles = Article::all();
-        $mtg = MtgCard::find($articles[0]->articlegable->multiverseid);
-        var_dump($mtg);
-        exit;
-        return Inertia::render('Home/Home',[
-            'articles' => $articles
-        ]);
+        return view('Home/Home', compact('articles'));
     }
 }

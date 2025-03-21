@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Card;
+use mtgsdk\Card as MtgCard;
 use App\Models\Article;
 
 class CardSeeder extends Seeder
@@ -14,10 +15,16 @@ class CardSeeder extends Seeder
      */
     public function run(): void
     {
+        $multiverseid = 386616;
+        $mtgCard = MtgCard::find($multiverseid);
         $card = Card::create([
-            'multiverseid' => 386616,
+            'multiverseid' => $multiverseid,
             'quantity' => 2,
-        ]);
+            'name' => $mtgCard->name,
+            'image_url' => $mtgCard->imageUrl,
+            'text' => $mtgCard->text,
+            'set' => $mtgCard->set
+        ]);       
 
         Article::create([
             'articlegable_type' => Card::class,
