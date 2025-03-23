@@ -1,14 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.app')
+@section('page_title', 'Home')
+
+@section('main')
+    <!-- Hero -->
+    <section>
+
+    </section>
+
+    <!-- Best selling by categories -->
+    <section>
+
+    </section>
+
+    <!-- Human banner -->
+    <section>
+
+    </section>
+
+    <!-- Recent added -->
+    <section>
+
+    </section>
+
     @foreach($articles as $article)
-        <article>
+        <article class="col-4 border">
             <div>
                 @if(class_basename($article->articlegable_type) === 'Card')
                     <h2>{{ $article->articlegable->name }}</h2>
@@ -28,5 +43,4 @@
             </div>
         </article>
     @endforeach
-</body>
-</html>
+@endsection

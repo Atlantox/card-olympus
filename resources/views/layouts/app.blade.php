@@ -4,38 +4,45 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="robots" content="@yield('robots', 'index')">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        @hasSection('meta_title')
+            <meta name="title" content="@yield('meta_title')">
+        @else
+            <meta name="title" content="@yield('page_title', 'Card Olympus')">
+        @endif
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <meta name="description" content="@yield('meta_description', 'The most friendly way to buy your Magic the Gathering cards, every process is for your comfort, search, contact, buy, shipment with us.')">
+        <meta name="author" content="Atlantox">
 
+        <title>@yield('page_title', 'Card Olympus')</title>
+        
         <!-- Styles -->
         @livewireStyles
+        @include('_partials.app.styles')
     </head>
-    <body class="font-sans antialiased">
-        w<x-banner />w
+    <body class="">
+        <!-- Page Heading -->
+        @hasSection('header')
+            @yield('header')
+        @else
+            @include('_partials.app.header')
+        @endif
 
-        <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
+        <!-- Page Content -->
+        <main class="row col-12 m-0 p-0 pt-5 mt-5 text-center justify-content-center align-items-center">
+            @yield('main')
+        </main>
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
+        <!-- Page footer -->
+        @hasSection('footer')
+            @yield('footer')
+        @else
+            @include('_partials.app.footer')
+        @endif
 
         @stack('modals')
-
         @livewireScripts
+        @include('_partials.app.scripts')
     </body>
 </html>
