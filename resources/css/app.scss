@@ -18,8 +18,8 @@ $terciary-d:#95986a;
 }
 
 @font-face {
-    font-family: kenyan;
-    src: url('Kenyan Coffee Rg.otf');
+    font-family: libertine;
+    src: url('LinLibertine_R.ttf');
 }
 
 *{
@@ -27,7 +27,7 @@ $terciary-d:#95986a;
 }
 
 h1, h2, h3, h4, h5, h6, th, thead, .orc-font, .dt-column-title{
-    font-family: kenyan;
+    font-family: libertine;
     font-weight: normal;
 }
 
@@ -231,8 +231,28 @@ h1, h2, h3, h4, h5, h6, th, thead, .orc-font, .dt-column-title{
     cursor:pointer;
 }
 
+.hero-title{
+    font-size:80px !important;
+    letter-spacing: 1px;
+}
+
+.hero-subtitle{
+    font-size:50px !important;
+    letter-spacing: 0.5px;
+}
+
+.best-selling{
+    background: $primary-l;
+    background: linear-gradient(180deg, $primary-l 0%, $secondary-l 100%);
+}
+
 .outline-black{
     -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+}
+
+.outline-black-l{
+    -webkit-text-stroke-width: 1.2px;
     -webkit-text-stroke-color: black;
 }
 

@@ -2,7 +2,7 @@
     <nav class="navbar fixed-top navbar-expand-lg lb-bg-primary shadowed flex-column pb-0">
         <div class="container-fluid mb-2 p-0 p-sm-1">
             <a class="navbar-brand m-0 col-12 col-md-3 col-lg-3 col-xl-2 text-center" href="{{ route('home') }}">
-                <img class="logo" src="{{ asset('logo.png') }}" alt="card olympus logo">
+                <img class="logo" src="{{ asset('images/logo.png') }}" alt="card olympus logo">
                 <span class="align-text-top">
                     Card Olympus
                 </span>
@@ -61,9 +61,9 @@
                       Account
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Settings</a></li>
+                      <li><a class="dropdown-item text-white" href="#">Settings</a></li>
                       <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Log out</a></li>
+                      <li><a class="dropdown-item text-white" href="#">Log out</a></li>
                     </ul>
                 </li>
               </ul>
