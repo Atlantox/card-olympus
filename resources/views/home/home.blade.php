@@ -70,21 +70,7 @@
                 <div class="tab-pane fade show active" id="bs_cards-tab-pane" role="tabpanel" aria-labelledby="bs_cards-tab" tabindex="0">
                     <div class="row col-12 m-0 p-0 justify-content-center align-items-start" id="best_selling_cards">
                         @foreach($articles as $article)
-                            <article class="col-6 col-sm-4 col-md-3 col-lg-2 p-2 h-100">
-                                <div class="border border-5 rounded">
-                                    @if(class_basename($article->articlegable_type) === 'Card')
-                                        <h4>{{ $article->articlegable->name }}</h4>
-                                        <figure>
-                                            <img width="211" height="296"  src="{{ $article->articlegable->image_url }}" alt="{{ $article->articlegable->name }}">
-                                        </figure>
-                                    @else
-                                        <h4>{{ $article->articlegable->name }}</h4>
-                                        <p>
-                                            {{ $article->articlegable->description }}
-                                        </p>
-                                    @endif
-                                </div>
-                            </article>
+                            @include('layouts.article_card')
                         @endforeach  
                     </div>
                 </div>

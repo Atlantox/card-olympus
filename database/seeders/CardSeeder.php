@@ -23,7 +23,7 @@ class CardSeeder extends Seeder
             'name' => $mtgCard->name,
             'image_url' => $mtgCard->imageUrl,
             'text' => $mtgCard->text,
-            'set' => $mtgCard->set
+            'set' => $mtgCard->setName
         ]);       
 
         Article::create([

@@ -246,6 +246,11 @@ h1, h2, h3, h4, h5, h6, th, thead, .orc-font, .dt-column-title{
     background: linear-gradient(180deg, $primary-l 0%, $secondary-l 100%);
 }
 
+.price-tag{
+    background: rgb(238,243,169);
+    background: linear-gradient(325deg, $secondary 0%, $terciary 100%);
+}
+
 .outline-black{
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
@@ -276,6 +281,10 @@ h1, h2, h3, h4, h5, h6, th, thead, .orc-font, .dt-column-title{
 
 .shadow-deep-l{
     box-shadow: inset 0 0 20px 5px black;
+}
+
+.animated{
+    transition:0.3s;
 }
 
 .animated-1{
@@ -416,6 +425,14 @@ input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance:none;
 }
 
+.product-card{
+
+}
+
+.article-card:hover{
+    padding:0 !important;
+}
+
 .myInput:focus{    
     border: $terciary-l solid 1px;
 }
@@ -473,30 +490,6 @@ input[type="checkbox"]::before {
     transform: scale(0);
     transition: 120ms transform ease-in-out;
     box-shadow: inset 1em 1em purple;
-}
-
-#Negro::before{
-    box-shadow: inset 1em 1em rgb(0, 0, 0);
-}
-
-#Azul::before{
-    box-shadow: inset 1em 1em rgb(129, 213, 255);
-}
-
-#Rojo::before{
-    box-shadow: inset 1em 1em rgb(255, 108, 108);
-}
-
-#Blanco::before{
-    box-shadow: inset 1em 1em rgb(238, 233, 163)
-}
-
-#Verde::before{
-    box-shadow: inset 1em 1em rgb(124, 248, 165);
-}
-
-#Incoloro::before{
-    box-shadow: inset 1em 1em rgb(163, 163, 163);
 }
 
 input[type="checkbox"]:checked::before {
