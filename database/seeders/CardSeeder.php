@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Card;
 use mtgsdk\Card as MtgCard;
 use App\Models\Article;
+use Illuminate\Support\Facades\Http;
 
 class CardSeeder extends Seeder
 {
@@ -16,19 +17,24 @@ class CardSeeder extends Seeder
     public function run(): void
     {
         $multiverseid = 386616;
-        $mtgCard = MtgCard::find($multiverseid);
+        $url = 'https://api.scryfall.com/cards/multiverse/' . $multiverseid;
+        $response = Http::get($url);
+        $card = $response->json();
+
         $card = Card::create([
             'multiverseid' => $multiverseid,
             'quantity' => 2,
-            'name' => $mtgCard->name,
-            'image_url' => $mtgCard->imageUrl,
-            'text' => $mtgCard->text,
-            'set' => $mtgCard->setName
+            'name' => $card['name'],
+            'image_url' => $card['image_uris']['normal'],
+            'text' => $card['oracle_text'],
+            'set' => $card['set_name'],
+            'price' => $card['prices']['usd'],
+            'price_foil' => $card['prices']['usd_foil'],
         ]);       
 
         Article::create([
-            'articlegable_type' => Card::class,
-            'articlegable_id' => $card->id
+            'articleable_type' => Card::class,
+            'articleable_id' => $card->id
         ]);
     }
 }

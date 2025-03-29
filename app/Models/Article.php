@@ -9,9 +9,9 @@ class Article extends Model
 {
     public $timestamps = false;
     protected $guarded = ['id'];
-    protected $fillable = ['articlegable_type', 'articlegable_id'];
+    protected $fillable = ['articleable_type', 'articleable_id'];
 
-    public function articlegable():MorphTo
+    public function articleable():MorphTo
     {
         return $this->morphTo();
     }

@@ -40,17 +40,17 @@ class ProductSeeder extends Seeder
         ];
 
         Article::create([
-            'articlegable_type' => Product::class,
-            'articlegable_id' => $products[0]->id
+            'articleable_type' => Product::class,
+            'articleable_id' => $products[0]->id
         ]);
 
         Article::create([
-            'articlegable_type' => Product::class,
-            'articlegable_id' => $products[1]->id
+            'articleable_type' => Product::class,
+            'articleable_id' => $products[1]->id
         ]);
         Article::create([
-            'articlegable_type' => Product::class,
-            'articlegable_id' => $products[2]->id
+            'articleable_type' => Product::class,
+            'articleable_id' => $products[2]->id
         ]);
     }
 }

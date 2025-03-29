@@ -13,8 +13,30 @@
         </div>
     </section>
 
+    <!-- Recent added by categories -->
+    <section class="row col-12 m-0 p-0 recent-added">
+        <div class="row col-12 text-center">
+            <h2 class="h1">Recently added</h2>
+        </div>
+        <div class="row col-12 justify-content-center align-items-center">
+            <div class="d-flex col-12 col-md-4 px-3 text-center">
+                <div class="col-12">
+                    <h4>Cards</h4>
+                </div>
+                <div class="col-12">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Human banner -->
+    <section>
+        Human banner
+    </section>
+
     <!-- Best selling by categories -->
-    <section class="row col-12 m-0 p-0 best-selling">
+    <section class="row col-12 m-0 p-0 best-selling h-100">
         <div class="row col-12 text-center">
             <h2 class="h1">Best selling</h2>
         </div>
@@ -69,31 +91,29 @@
             <div class="tab-content mt-3" id="bs_tabsContent">
                 <div class="tab-pane fade show active" id="bs_cards-tab-pane" role="tabpanel" aria-labelledby="bs_cards-tab" tabindex="0">
                     <div class="row col-12 m-0 p-0 justify-content-center align-items-start" id="best_selling_cards">
-                        @foreach($articles as $article)
+                        @foreach($best_selling_articles['cards'] as $article)
                             @include('layouts.article_card')
                         @endforeach  
                     </div>
                 </div>
 
                 <div class="tab-pane fade" id="bs_products-tab-pane" role="tabpanel" aria-labelledby="bs_products-tab" tabindex="0">
-                    Products
+                    <div class="row col-12 m-0 p-0 justify-content-center align-items-start" id="best_selling_cards">
+                        @foreach($best_selling_articles['products'] as $article)
+                            @include('layouts.article_card')
+                        @endforeach  
+                    </div>
                 </div>
 
                 <div class="tab-pane fade" id="bs_sealed-tab-pane" role="tabpanel" aria-labelledby="bs_sealed-tab" tabindex="0">
-                    Sealed
+                    <div class="row col-12 m-0 p-0 justify-content-center align-items-start" id="best_selling_cards">
+                        @foreach($best_selling_articles['sealed'] as $article)
+                            @include('layouts.article_card')
+                        @endforeach  
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Human banner -->
-    <section>
-
-    </section>
-
-    <!-- Recent added -->
-    <section>
-
     </section>
 
     

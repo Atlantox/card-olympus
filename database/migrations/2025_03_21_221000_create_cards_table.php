@@ -19,8 +19,10 @@ return new class extends Migration
             $table->text('image_url');
             $table->string('flavor')->nullable();
             $table->integer('quantity');
+            $table->boolean('foil')->default(false);
+            $table->string('price')->nullable();
+            $table->string('price_foil')->nullable();
             $table->string('set');
-            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

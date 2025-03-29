@@ -219,6 +219,10 @@ h1, h2, h3, h4, h5, h6, th, thead, .orc-font, .dt-column-title{
     color:rgb(109, 109, 109);
 }
 
+.text-white{
+    color:rgb(255,255,255) !important;
+}
+
 .border-none{
     border: none
 } 
@@ -241,14 +245,25 @@ h1, h2, h3, h4, h5, h6, th, thead, .orc-font, .dt-column-title{
     letter-spacing: 0.5px;
 }
 
-.best-selling{
+.recent-added{
     background: $primary-l;
     background: linear-gradient(180deg, $primary-l 0%, $secondary-l 100%);
+}
+
+.best-selling{
+    background: $secondary-l;
+    background: linear-gradient(180deg, $secondary-l 0%, $primary-l 100%);
 }
 
 .price-tag{
     background: rgb(238,243,169);
     background: linear-gradient(325deg, $secondary 0%, $terciary 100%);
+}
+
+.foil-tag{
+    font-size:12px !important;
+    background: rgb(238,243,169);
+    background: linear-gradient(325deg, rgb(136, 188, 255) 0%, rgb(255, 116, 236) 100%);
 }
 
 .outline-black{

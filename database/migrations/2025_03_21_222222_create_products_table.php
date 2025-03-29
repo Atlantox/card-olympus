@@ -18,7 +18,6 @@ return new class extends Migration
             $table->decimal('price', 12, 2);
             $table->string('image_name', 100);
             $table->integer('quantity');
-            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }
