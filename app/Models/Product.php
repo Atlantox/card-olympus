@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 class Product extends Model
 {
-    protected $fillable = ['name', 'description', 'price', 'image_url', 'quantity',' active', 'article_id'];
+    protected $fillable = ['name', 'description', 'price', 'image_url', 'quantity', 'article_id'];
 
     public function article():MorphOne
     {

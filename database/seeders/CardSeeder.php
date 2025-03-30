@@ -16,25 +16,46 @@ class CardSeeder extends Seeder
      */
     public function run(): void
     {
-        $multiverseid = 386616;
-        $url = 'https://api.scryfall.com/cards/multiverse/' . $multiverseid;
-        $response = Http::get($url);
-        $card = $response->json();
+        $multiverse_ids = [
+            386616, // Narset, Enlightened Master
+            522262, // Asmoranomardicadaistinaculdacar
+            491677, // Charix, the raging isle
+            685919, // Thing in the ice
+            589567, // Kenessos, priest of thassa
+            580946, // Ghyrson
+        ];
 
-        $card = Card::create([
-            'multiverseid' => $multiverseid,
-            'quantity' => 2,
-            'name' => $card['name'],
-            'image_url' => $card['image_uris']['normal'],
-            'text' => $card['oracle_text'],
-            'set' => $card['set_name'],
-            'price' => $card['prices']['usd'],
-            'price_foil' => $card['prices']['usd_foil'],
-        ]);       
+        foreach($multiverse_ids as $multiverseid){
+            $url = 'https://api.scryfall.com/cards/multiverse/' . $multiverseid;
+            $response = Http::get($url);
+            $original_card = $response->json();
+            $card = $original_card;
 
-        Article::create([
-            'articleable_type' => Card::class,
-            'articleable_id' => $card->id
-        ]);
+            if($card['layout'] === 'transform')
+                $card = $original_card['card_faces'][0];
+
+            
+            $foil = mt_rand(0, 1) === 1;
+            $flavor = isset($card['flavor_text']) ?? null;
+            
+            $card = Card::create([
+                'multiverseid' => $multiverseid,
+                'quantity' => 2,
+                'name' => $card['name'],
+                'full_image_url' => $card['image_uris']['normal'],
+                'art_image_url' => $card['image_uris']['art_crop'],
+                'flavor' => $flavor,
+                'text' => $card['oracle_text'],
+                'set' => $original_card['set_name'],
+                'price' => $original_card['prices']['usd'],
+                'price_foil' => $original_card['prices']['usd_foil'],
+                'foil' => $foil
+            ]);       
+    
+            Article::create([
+                'articleable_type' => Card::class,
+                'articleable_id' => $card->id
+            ]);
+        }
     }
 }

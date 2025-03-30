@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->boolean('active')->default(true);
             $table->morphs('articleable');
+            $table->timestamps();
         });
     }
 

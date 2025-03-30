@@ -96,6 +96,12 @@ h1, h2, h3, h4, h5, h6, th, thead, .orc-font, .dt-column-title{
     border: $terciary-d solid 2px;
 }
 
+.bg-image{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .bg-black{
     background:black;
 }
@@ -171,6 +177,10 @@ h1, h2, h3, h4, h5, h6, th, thead, .orc-font, .dt-column-title{
 
 .text-bright{
     text-shadow: 0px 0px 8px white !important;
+}
+
+.text-bright-h{
+    text-shadow: 0px 0px 6px white !important;
 }
 
 .text-shadow-x{
@@ -284,6 +294,10 @@ h1, h2, h3, h4, h5, h6, th, thead, .orc-font, .dt-column-title{
 .outline-white{
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: white;
+}
+
+.italic{
+    font-style: italic !important;
 }
 
 .shadow-deep-h{
@@ -406,6 +420,14 @@ h1, h2, h3, h4, h5, h6, th, thead, .orc-font, .dt-column-title{
 
 .hover-bigger:hover{
     transform: scale(1.2)
+}
+
+.hover-bigger-l{
+    transition: 0.5s
+}
+
+.hover-bigger-l:hover{
+    transform: scale(1.07);
 }
 
 /*  FORMS  */

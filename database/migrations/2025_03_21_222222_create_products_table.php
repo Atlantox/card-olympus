@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('name', 255);
             $table->text('description')->nullable();
             $table->decimal('price', 12, 2);
-            $table->string('image_name', 100);
+            $table->string('image_name', 255);
+            $table->string('set', 255)->nullable();
             $table->integer('quantity');
             $table->timestamps();
         });

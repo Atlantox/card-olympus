@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('multiverseid');
             $table->string('name', 255);
-            $table->string('text')->nullable();
-            $table->text('image_url');
+            $table->text('text')->nullable();
+            $table->text('full_image_url');
+            $table->text('art_image_url');
             $table->string('flavor')->nullable();
             $table->integer('quantity');
             $table->boolean('foil')->default(false);
