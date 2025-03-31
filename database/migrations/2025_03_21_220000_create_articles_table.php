@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
+            $table->decimal('offer')->nullable()->default(null);
+            $table->date('offer_finish')->nullable()->default(null);
             $table->boolean('active')->default(true);
             $table->morphs('articleable');
             $table->timestamps();

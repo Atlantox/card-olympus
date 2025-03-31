@@ -1,4 +1,4 @@
-<article class="row col-12 m-0 p-0 border-top rounded bg-white overflow-hidden">
+<article class="row col-12 m-0 p-0 border-top rounded bg-white overflow-hidden" title="{{ $article->articleable->flavor }}">
     <div class="col-12 d-flex p-0 justify-content-center align-items-center">
         <figure class="col-2 m-0 text-start">
             @if(class_basename($article->articleable_type) === 'Card')
@@ -13,13 +13,18 @@
             </h4>
             <div class="col-12 d-flex justiy-content-start align-items-center">
                 <h5 class="fs-6 italic m-0">{{ $article->articleable->set }}</h5>
-                @include('_partials.cards.foil_tag')
+                @include('_partials.article_cards.foil_tag')
             </div>
         </div>
         <div class="col-2 h-100 d-flex justify-content-center align-items-center border-start">
             <span class="text-white lb-bg-secondary-d p-0 px-3 rounded-pill align-middle">
-                @include('_partials.cards.price')
+                @include('_partials.article_cards.price')
             </span>
+            @if($article->onOffer)
+                <span class="text-white lb-bg-secondary-d p-0 px-3 rounded-pill align-middle">
+                    @include('_partials.article_cards.offer')
+                </span>
+            @endif
         </div>
     </div>
 </article>

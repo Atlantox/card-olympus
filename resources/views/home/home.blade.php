@@ -67,8 +67,8 @@
         
     </section>
 
-    <!-- Best selling by categories -->
-    <section class="row col-12 m-0 p-0 py-5 best-selling h-100" style="z-index:1">
+    <!-- Best selling cards and produts -->
+    <section class="row col-12 m-0 p-0 py-5 best-selling h-100">
         <div class="row col-12 text-center">
             <h2 class="h1 fw-bold">Best selling</h2>
         </div>
@@ -123,6 +123,24 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers -->
+    <section class="row col-12 m-0 p-0 py-5 best-selling h-100" style="z-index:1">
+        <div class="row col-12 text-center">
+            <h2 class="h1 fw-bold">Offers</h2>
+        </div>
+        <div class="row col-12 justify-content-center align-items-center">
+            <div class="d-flex col-12 col-xl-8 px-3 flex-wrap">
+                <div class="col-12 col-md-6 d-flex flex-column">
+                    <div class="row col-12 px-3">
+                        @foreach($offer_articles as $article)
+                            @include('layouts.article_tiny_card')
+                        @endforeach 
+                    </div>
+                </div>
             </div>
         </div>
     </section>

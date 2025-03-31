@@ -36,7 +36,7 @@ class CardSeeder extends Seeder
 
             
             $foil = mt_rand(0, 1) === 1;
-            $flavor = isset($card['flavor_text']) ?? null;
+            $flavor = $card['flavor_text'] ?? null;
             
             $card = Card::create([
                 'multiverseid' => $multiverseid,

@@ -96,6 +96,18 @@ h1, h2, h3, h4, h5, h6, th, thead, .orc-font, .dt-column-title{
     border: $terciary-d solid 2px;
 }
 
+.lb-text-primary{
+    color: $primary;
+}
+
+.lb-text-secondary{
+    color: $secondary;
+}
+
+.lb-text-terciary{
+    color: $terciary;
+}
+
 .bg-image{
     background-position: center;
     background-repeat: no-repeat;
@@ -274,6 +286,15 @@ h1, h2, h3, h4, h5, h6, th, thead, .orc-font, .dt-column-title{
     font-size:12px !important;
     background: rgb(238,243,169);
     background: linear-gradient(325deg, rgb(136, 188, 255) 0%, rgb(255, 116, 236) 100%);
+}
+
+/*
+TRY TO ADD A GRADIENT ANIMATION
+*/
+.text-gradient{
+    background-image: linear-gradient(90deg, $terciary 0%, $primary 100%);
+    color: transparent;
+    background-clip: text;
 }
 
 .outline-black{
@@ -462,12 +483,12 @@ input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance:none;
 }
 
-.product-card{
-
-}
-
 .article-card:hover{
     padding:0 !important;
+}
+
+.card-image{
+    border-radius: 10px;
 }
 
 .myInput:focus{    

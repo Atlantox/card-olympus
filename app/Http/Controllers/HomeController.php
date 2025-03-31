@@ -28,7 +28,9 @@ class HomeController extends Controller
             'cards' => $bs_cards,
             'products' => $bs_products,
         ];
+
+        $offer_articles = Article::where('offer_finish', '>=', 'TODAY()')->with('articleable')->where('active', 1)->orderBy('articles.offer_finish', 'DESC')->limit(20)->get();
         
-        return view('Home/Home', compact(['recent_articles', 'best_selling_articles']));
+        return view('Home/Home', compact(['recent_articles', 'best_selling_articles', 'offer_articles']));
     }
 }

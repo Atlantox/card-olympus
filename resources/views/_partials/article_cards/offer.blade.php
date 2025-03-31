@@ -1,0 +1,1 @@
+{{ round($article->offer, 2) }}% Off
