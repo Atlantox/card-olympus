@@ -1,11 +1,9 @@
 <article class="col-6 col-sm-4 col-md-3 col-lg-2 p-3 h-100">    
     <div class="col-12 p-0 text-center d-flex justify-content-center flex-column align-items-center px-2 article-card animated">
-        <span class="fw-bold text-center rounded-top align-middle pt-1 h-auto px-3 lb-bg-secondary-d border border-white" style="color: rgb(255,255,255)">
+        <span class="fw-bold text-center rounded-top align-middle pt-1 h-auto px-3 bg-white shadowed">
             @include('_partials.article_cards.price')
             @if($article->onOffer)
-                <span class="text-gradient">
-                    @include('_partials.article_cards.offer')
-                </span>
+                @include('_partials.article_cards.offer')
             @endif
         </span>
         <figure class="col-12 m-0">

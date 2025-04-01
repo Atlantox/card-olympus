@@ -14,12 +14,12 @@
     </section>
 
     <!-- Recent added by categories -->
-    <section class="row col-12 m-0 p-0 py-5 recent-added" style="z-index:1">
+    <section class="row col-12 m-0 p-0 py-5 recent-added justify-content-center" style="z-index:1">
         <div class="row col-12 text-center">
             <h2 class="h1 fw-bold">Recently added</h2>
         </div>
         <div class="row col-12 justify-content-center align-items-center">
-            <div class="d-flex col-12 col-xl-8 px-3 flex-wrap">
+            <div class="d-flex col-12 col-xl-10 col-xxl-9 flex-wrap p-0 px-xxl-3">
                 <div class="col-12 col-md-6 d-flex flex-column">
                     <div class="row col-12 px-3">
                         @foreach($recent_articles['cards'] as $article)
@@ -39,11 +39,11 @@
     </section>
 
     <!-- Human banner -->
-    <section class="row col-12 m-0 p-0 py-5 lb-bg-secondary shadowed bg-image align-items-center" style="z-index:2; background-image:url('{{ asset('images/world_tree.avif') }}')">
+    <section class="row col-12 m-0 p-0 py-5 lb-bg-secondary shadowed bg-image align-items-center flex-column-reverse flex-lg-row" style="z-index:2; background-image:url('{{ asset('images/world_tree.avif') }}')">
         <div class="col-12 col-lg-8 text-bright-h fw-bold">
             <div class="col-12">
                 <h2 class="h1col-12 text-center fw-bold fs-1">Our Philosophy</h2>
-                <h3 class="italic fs-2">« More human, less automatic »</h3>
+                <h3 class="italic fw-bold fs-2">« More human, less automatic »</h3>
             </div>
             <div class="row col-12 m-0 p-0">
                 <div class="col-12 fs-4">
@@ -61,14 +61,14 @@
                 </a>
             </div>
         </div>
-        <div class="col-12 col-lg-4">
+        <div class="col-10 col-lg-4">
             <img class="col-8 rounded shadowed-l" src="{{ asset('images/naturalize.jpg') }}" alt="">
         </div>
         
     </section>
 
     <!-- Best selling cards and produts -->
-    <section class="row col-12 m-0 p-0 py-5 best-selling h-100">
+    <section class="row col-12 m-0 p-0 py-5 lb-bg-secondary-l h-100">
         <div class="row col-12 text-center">
             <h2 class="h1 fw-bold">Best selling</h2>
         </div>

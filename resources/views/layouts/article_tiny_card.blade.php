@@ -16,12 +16,12 @@
                 @include('_partials.article_cards.foil_tag')
             </div>
         </div>
-        <div class="col-2 h-100 d-flex justify-content-center align-items-center border-start">
-            <span class="text-white lb-bg-secondary-d p-0 px-3 rounded-pill align-middle">
+        <div class="col-2 h-100 d-flex justify-content-center align-items-center border-start flex-column">
+            <span class="text-black p-0 px-2 my-1 rounded-pill align-middle fw-bold">
                 @include('_partials.article_cards.price')
             </span>
             @if($article->onOffer)
-                <span class="text-white lb-bg-secondary-d p-0 px-3 rounded-pill align-middle">
+                <span class="p-0 px-2 my-1 rounded-pill align-middle text-shadow-l">
                     @include('_partials.article_cards.offer')
                 </span>
             @endif
