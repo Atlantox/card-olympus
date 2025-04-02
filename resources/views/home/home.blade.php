@@ -7,7 +7,7 @@
         <div class="col-12 p-0">
             <figure class="row col-12 m-0 p-0 justify-content-center align-items-center text-white">
                 <img class="w-100 text-center p-0" height="400" src="{{ asset('charix.jpg') }}" alt="hero">
-                <h1 class="position-absolute text-shadow hero-title">Card Olympus</h1>
+                <h1 class="position-absolute text-shadow hero-title text-break">Card Olympus</h1>
                 <h3 class="position-absolute text-shadow italic hero-subtitle" style="bottom:55%;">« The most personal way to buy your Magic cards »</h3>
             </figure>
         </div>
@@ -19,22 +19,11 @@
             <h2 class="h1 fw-bold">Recently added</h2>
         </div>
         <div class="row col-12 justify-content-center align-items-center">
-            <div class="d-flex col-12 col-xl-10 col-xxl-9 flex-wrap p-0 px-xxl-3">
-                <div class="col-12 col-md-6 d-flex flex-column">
-                    <div class="row col-12 px-3">
-                        @foreach($recent_articles['cards'] as $article)
-                            @include('layouts.article_tiny_card')
-                        @endforeach 
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 d-flex flex-column">
-                    <div class="row col-12 px-3">
-                        @foreach($recent_articles['products'] as $article)
-                            @include('layouts.article_tiny_card')
-                        @endforeach 
-                    </div>
-                </div>
-            </div>
+            <div class="row col-12 m-0 p-0 flex-wrap">
+                @foreach($recent_articles as $article)
+                    @include('layouts.article_card')
+                @endforeach 
+            </div>                
         </div>
     </section>
 
@@ -57,7 +46,7 @@
             </div>
             <div class="row col-12 m-0 p-0 justify-content-center">
                 <a href="">
-                    <button class="col-2 lb-bg-terciary py-2 border-0 rounded-pill shadowed hover-bigger-l">Read more</button>
+                    <button class="col-6 col-md-4 col-lg-2 lb-bg-terciary py-2 border-0 rounded-pill shadowed hover-bigger-l">Read more</button>
                 </a>
             </div>
         </div>
@@ -133,15 +122,16 @@
             <h2 class="h1 fw-bold">Offers</h2>
         </div>
         <div class="row col-12 justify-content-center align-items-center">
-            <div class="d-flex col-12 col-xl-8 px-3 flex-wrap">
-                <div class="col-12 col-md-6 d-flex flex-column">
-                    <div class="row col-12 px-3">
-                        @foreach($offer_articles as $article)
-                            @include('layouts.article_tiny_card')
-                        @endforeach 
-                    </div>
-                </div>
+            <div class="d-flex col-12 px-3 flex-wrap justify-content-center">
+                @foreach($offer_articles as $article)
+                    @include('layouts.article_card')
+                @endforeach 
             </div>
+        </div>
+        <div class="row col-12 justify-content-center align-items-center">
+            <a href="">
+                <button class="col-6 col-md-4 col-lg-2 lb-bg-terciary py-2 border-0 rounded-pill shadowed hover-bigger-l">See all offers</button>
+            </a>
         </div>
     </section>
 

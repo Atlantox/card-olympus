@@ -1,10 +1,10 @@
-<article class="row col-12 m-0 p-0 border-top rounded bg-white overflow-hidden" title="{{ $article->articleable->flavor }}">
+<article class="row col-12 m-0 p-0 border-top rounded bg-white overflow-hidden shadowed tiny-article-card" title="{{ $article->articleable->flavor }}">
     <div class="col-12 d-flex p-0 justify-content-center align-items-center">
-        <figure class="col-2 m-0 text-start">
+        <figure class="col-2 col-lg-2 m-0 text-start">
             @if(class_basename($article->articleable_type) === 'Card')
-                <img class="col-11" height="65" src="{{ $article->articleable->art_image_url }}" alt="{{ $article->articleable->name }}">
+                <img class="col-12" height="80" src="{{ $article->articleable->art_image_url }}" alt="{{ $article->articleable->name }}">
             @else
-                <img class="col-9" height="65" src="{{ asset('images/dragonshield.webp') }}" alt="{{ $article->articleable->name }}">
+                <img class="col-9 border" height="80" src="{{ asset('images/dragonshield.webp') }}" alt="{{ $article->articleable->name }}">
             @endif
         </figure>
         <div class="col-8 d-flex flex-wrap text-start ps-2">

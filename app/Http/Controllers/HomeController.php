@@ -13,13 +13,7 @@ class HomeController extends Controller
 {
     public function index():View
     {
-        $recent_cards = Article::whereHasMorph('articleable', [Card::class])->with('articleable')->where('active', 1)->orderBy('articles.created_at', 'DESC')->limit(6)->get();
-        $recent_products = Article::whereHasMorph('articleable', [Product::class])->with('articleable')->where('active', 1)->orderBy('articles.created_at', 'DESC')->limit(6)->get();
-
-        $recent_articles = [
-            'cards' => $recent_cards,
-            'products' => $recent_products
-        ];
+        $recent_articles = Article::where('active', 1)->with('articleable')->orderBy('articles.created_at', 'DESC')->limit(10)->get();
 
         $bs_cards = Article::whereHasMorph('articleable', [Card::class])->with('articleable')->where('active', 1)->limit(6)->get();
         $bs_products = Article::whereHasMorph('articleable', [Product::class])->with('articleable')->where('active', 1)->limit(6)->get();
@@ -29,7 +23,7 @@ class HomeController extends Controller
             'products' => $bs_products,
         ];
 
-        $offer_articles = Article::where('offer_finish', '>=', 'TODAY()')->with('articleable')->where('active', 1)->orderBy('articles.offer_finish', 'DESC')->limit(20)->get();
+        $offer_articles = Article::where('offer_finish', '>=', 'TODAY()')->with('articleable')->where('active', 1)->orderBy('articles.offer_finish', 'DESC')->limit(12)->get();
         
         return view('Home/Home', compact(['recent_articles', 'best_selling_articles', 'offer_articles']));
     }
