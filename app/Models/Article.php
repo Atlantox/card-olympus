@@ -28,7 +28,7 @@ class Article extends Model
     protected function getSubPriceAttribute():float
     {
         $result = $this->articleable->price;
-        if(class_basename($this->articlable_type) === 'Card'){
+        if($this->Type === 'Card'){
             if($this->articleable->foil === 1)
                 $result = $this->articleable->price_foil;
         }
@@ -48,5 +48,10 @@ class Article extends Model
         else{
             return $this->articleable->price;
         }
+    }
+
+    protected function getTypeAttribute():string
+    {
+        return class_basename($this->articleable_type);
     }
 }

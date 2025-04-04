@@ -283,7 +283,7 @@ h1, h2, h3, h4, h5, h6, th, thead, .orc-font, .dt-column-title{
 }
 
 .foil-tag{
-    font-size:12px !important;
+    font-size:12px;
     background: rgb(238,243,169);
     background: linear-gradient(325deg, rgb(136, 188, 255) 0%, rgb(255, 116, 236) 100%);
 }
@@ -480,8 +480,12 @@ input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance:none;
 }
 
-.article-card:hover{
-    padding:0 !important;
+.article-image{
+    transition:0.5s;
+}
+
+.article-image:hover{
+    box-shadow: 0 0 20px 10px rgb(255, 255, 255);
 }
 
 .tiny-article-card{
@@ -490,7 +494,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .card-image{
-    border-radius: 10px;
+    border-radius: 13px;
 }
 
 .myInput:focus{    

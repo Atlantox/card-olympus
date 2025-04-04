@@ -17,9 +17,7 @@ return new class extends Migration
             $table->string('name', 255);
             $table->text('text')->nullable();
             $table->text('full_image_url');
-            $table->text('art_image_url');
             $table->string('flavor')->nullable();
-            $table->integer('quantity');
             $table->boolean('foil')->default(false);
             $table->string('price')->nullable();
             $table->string('price_foil')->nullable();

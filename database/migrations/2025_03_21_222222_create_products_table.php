@@ -18,7 +18,6 @@ return new class extends Migration
             $table->decimal('price', 12, 2);
             $table->string('image_name', 255);
             $table->string('set', 255)->nullable();
-            $table->integer('quantity');
             $table->timestamps();
         });
     }

@@ -21,36 +21,40 @@ class ProductSeeder extends Seeder
                 'description' => 'Mate sleeves of dark blue color ideal for protect your Magic cards. Compatible with perfect fit',
                 'price' => 18,
                 'image_name' => 'dragonshielddarkblue.png',
-                'quantity' => 8,
             ]),
             Product::create([
                 'name' => 'Dragon shield sleeves shiny yellow',
                 'description' => 'Mate sleeves of a radiant yellow color ideal for protect your Magic cards. Compatible with perfect fit',
                 'price' => 18,
                 'image_name' => 'dragonshieldyellow.png',
-                'quantity' => 10,
             ]),
                 Product::create([
                 'name' => 'Dragon shield sleeves white',
                 'description' => 'Mate sleeves of pure white color ideal for protect your Magic cards. Compatible with perfect fit',
                 'price' => 18,
                 'image_name' => 'dragonshieldwhite.png',
-                'quantity' => 4,
             ]),
         ];
 
+        $quantity = mt_rand(1, 8);
         Article::create([
             'articleable_type' => Product::class,
-            'articleable_id' => $products[0]->id
+            'articleable_id' => $products[0]->id,
+            'quantity' => $quantity,
         ]);
 
+        $quantity = mt_rand(1, 8);
         Article::create([
             'articleable_type' => Product::class,
-            'articleable_id' => $products[1]->id
+            'articleable_id' => $products[1]->id,
+            'quantity' => $quantity,
         ]);
+
+        $quantity = mt_rand(1, 8);
         Article::create([
             'articleable_type' => Product::class,
-            'articleable_id' => $products[2]->id
+            'articleable_id' => $products[2]->id,
+            'quantity' => $quantity,
         ]);
     }
 }

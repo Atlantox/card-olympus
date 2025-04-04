@@ -35,15 +35,13 @@ class CardSeeder extends Seeder
                 $card = $original_card['card_faces'][0];
 
             
-            $foil = mt_rand(0, 1) === 1;
+            $foil = mt_rand(0, 1) === 1;            
             $flavor = $card['flavor_text'] ?? null;
             
             $card = Card::create([
-                'multiverseid' => $multiverseid,
-                'quantity' => 2,
+                'multiverseid' => $multiverseid,                
                 'name' => $card['name'],
                 'full_image_url' => $card['image_uris']['normal'],
-                'art_image_url' => $card['image_uris']['art_crop'],
                 'flavor' => $flavor,
                 'text' => $card['oracle_text'],
                 'set' => $original_card['set_name'],
@@ -51,10 +49,12 @@ class CardSeeder extends Seeder
                 'price_foil' => $original_card['prices']['usd_foil'],
                 'foil' => $foil
             ]);       
-    
+
+            $quantity = mt_rand(1, 8);    
             Article::create([
                 'articleable_type' => Card::class,
-                'articleable_id' => $card->id
+                'articleable_id' => $card->id,
+                'quantity' => $quantity,
             ]);
         }
     }
